@@ -1,0 +1,26 @@
+<%- include('./../partials/header') -%>
+
+    <div class="my-5">
+        <h1 class="text-center">Comment</h1>
+    </div>
+
+    <div class="container askquestion">
+
+        <div class="row">
+            <div class="col-md-6 col-10 mx-auto">
+                <form action="/discussions/<%=discussion.id%>/comments" method="POST" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="currQuestion" class="form-label"><strong>Your Comment</strong></label>
+                        <textarea class="form-control" name="comment" id="currQuestion" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <%- include('./../partials/footer') -%>

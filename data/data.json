@@ -1,0 +1,146 @@
+{
+    "cse": {
+        "items": [
+            {
+                "courseCode": "CSN-101",
+                "courseName": "Introduction to Computer Science and Engineering"
+            },
+            {
+                "courseCode": "CSN-103",
+                "courseName": "Fundamentals of Object Oriented Programming"
+            },
+            {
+                "courseCode": "MAN-001",
+                "courseName": "Mathematics-I"
+            },
+            {
+                "courseCode": "CEN-105",
+                "courseName": "Introduction to Environmental Studies"
+            },
+            {
+                "courseCode": "HSN-002",
+                "courseName": "Ethics and Self Awareness"
+            },
+            {
+                "courseCode": "PHN-005",
+                "courseName": "Electrodynamics and Optics"
+            },
+            {
+                "courseCode": "HSN-101B",
+                "courseName": "Communication Skills (Advance)"
+            },
+            {
+                "courseCode": "HSN-101A",
+                "courseName": "Communication Skills (Basic)"
+            }
+        ]
+    },
+    "ece": {
+        "items": [
+            {
+                "courseCode": "ECN-101",
+                "courseName": "Introduction to Electronics & Communication Engineering"
+            },
+            {
+                "courseCode": "CSN-103",
+                "courseName": "Fundamentals of Object Oriented Programming"
+            },
+            {
+                "courseCode": "MAN-001",
+                "courseName": "Mathematics-I"
+            },
+            {
+                "courseCode": "CEN-105",
+                "courseName": "Introduction to Environmental Studies"
+            },
+            {
+                "courseCode": "HSN-002",
+                "courseName": "Ethics and Self Awareness"
+            },
+            {
+                "courseCode": "PHN-005",
+                "courseName": "Electrodynamics and Optics"
+            },
+            {
+                "courseCode": "HSN-101B",
+                "courseName": "Communication Skills (Advance)"
+            },
+            {
+                "courseCode": "HSN-101A",
+                "courseName": "Communication Skills (Basic)"
+            }
+        ]
+    },
+    "ee": {
+        "items": [
+            {
+                "courseCode": "EEN-101",
+                "courseName": "Introduction to Electrical Engineering"
+            },
+            {
+                "courseCode": "EEN-103",
+                "courseName": "Programming in C++"
+            },
+            {
+                "courseCode": "MAN-001",
+                "courseName": "Mathematics-I"
+            },
+            {
+                "courseCode": "CEN-105",
+                "courseName": "Introduction to Environmental Studies"
+            },
+            {
+                "courseCode": "HSN-002",
+                "courseName": "Ethics and Self Awareness"
+            },
+            {
+                "courseCode": "PHN-003",
+                "courseName": "Electromagnetic Field Theory"
+            },
+            {
+                "courseCode": "HSN-101B",
+                "courseName": "Communication Skills (Advance)"
+            },
+            {
+                "courseCode": "HSN-101A",
+                "courseName": "Communication Skills (Basic)"
+            }
+        ]
+    },
+    "msm": {
+        "items": [
+            {
+                "courseCode": "MAN-101",
+                "courseName": "Introduction to Mathematical Sciences"
+            },
+            {
+                "courseCode": "MAN-103",
+                "courseName": "Introduction to Computer Programming"
+            },
+            {
+                "courseCode": "MAN-001",
+                "courseName": "Mathematics-I"
+            },
+            {
+                "courseCode": "CEN-105",
+                "courseName": "Introduction to Environmental Studies"
+            },
+            {
+                "courseCode": "HSN-002",
+                "courseName": "Ethics and Self Awareness"
+            },
+            {
+                "courseCode": "PHN-001",
+                "courseName": "Mechanics"
+            },
+            {
+                "courseCode": "HSN-101B",
+                "courseName": "Communication Skills (Advance)"
+            },
+            {
+                "courseCode": "HSN-101A",
+                "courseName": "Communication Skills (Basic)"
+            }
+        ]
+    }
+}

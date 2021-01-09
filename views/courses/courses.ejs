@@ -1,0 +1,16 @@
+<%- include('./../partials/header') -%>
+
+    <div class="container">
+        <div class="list-group">
+            <h2 class="my-4 text-center">Your Courses</h2>
+            <% courselist.items.forEach(function(course){%>
+                <a href="/courses/<%= course.courseCode %>" class="list-group-item list-group-item-action my-1 border-top mx-auto myCourse" style="background-color: #fff1e1; color: #1d3c45; border-radius: 20px; font-size: 1.24rem; width:70%; min-width: 150px; max-height: 70px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;"> 
+                    <%=course.courseCode%>-<%=course.courseName%>
+                </a>
+             <%}); %>
+
+        </div>
+    </div>
+
+
+<%- include('./../partials/footer') -%>

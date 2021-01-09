@@ -1,0 +1,32 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-4">
+    <h2 class="text-center">Rankings</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Username</th>
+                <th scope="col">Enrollment No.</th>
+                <th scope="col">Answered</th>
+                <th scope="col">Asked</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% currentUsers.forEach(function(person){%>
+                <tr>
+                    <th scope="row"><%=i%></th>
+                    <td><%=person.username%></td>
+                    <td><%=person.enrollmentNo%></td>
+                    <td><%=person.totalAnswered%></td>
+                    <td><%=person.totalAsked%></td>
+                </tr>
+                <%i=i+1%>
+                <%}); %>
+
+
+        </tbody>
+    </table>
+</div>
+    <%- include('partials/footer') -%>

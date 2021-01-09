@@ -1,0 +1,35 @@
+<%- include('./../partials/header') -%>
+
+    <div class="my-5">
+        <h1 class="text-center">Ask a Question</h1>
+    </div>
+
+    <div class="container askquestion">
+
+        <div class="row">
+            <div class="col-md-6 col-10 mx-auto">
+                <form action="/courses/<%=courseName%>" method="POST" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="currTopic" class="form-label"><strong>Topic</strong></label>
+                        <input type="text" name="topic" class="form-control" id="currTopic"
+                            placeholder="Enter the topic" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="currQuestion" class="form-label"><strong>Question</strong></label>
+                        <textarea class="form-control" name="question" id="currQuestion" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="ifCurrentUserAnonymous" value="true" name="isAnonymous">
+                        <label class="form-check-label" for="ifCurrentUserAnonymous"><strong>Ask Anonymously</strong></label>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <%- include('./../partials/footer') -%>

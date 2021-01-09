@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.navbar a{
+    text-transform: capitalize;
+    font-size: 1.25rem;
+}
+
+.my-link:hover{
+    color: #3498db !important;
+}
+
+.my-link{
+    text-decoration: none;
+    color: #000 !important;
+    display: inline-block;
+}
+
+.myNav{
+    background-color: #ffe326 !important;
+}
+
+.my-link::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #1d4762;
+    transition: width 1s;
+}
+
+.my-link:hover::after{
+    width: 100%;
+    transition: width 1s;
+}
+
+.navbar-brand{
+    font-size: 1.4rem !important;
+}
+
+body {
+    padding-top: 65px;
+    background-color: #D3D3D3;
+    margin: 0;
+    padding-bottom: 340px;
+  }
+  
+  html{
+    position: relative;
+    min-height: 100%;
+  }
+
+.myCourse:hover{
+    /* color: #1d3c45 !important; */
+    /* background-color: #fff1e1 !important; */
+    color: #fff1e1 !important;
+    background-color: #1d3c45 !important;
+}
+
+.myCardBody{
+    font-family: 'Handlee', cursive, sans-serif;
+}
+
+.askquestion{
+    width: 100%;
+    height: 75vh;
+}
+@media only screen and (max-width: 480px) {
+    .createNewDiscussion{
+        text-align: center;
+    }
+}

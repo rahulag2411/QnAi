@@ -1,0 +1,87 @@
+<%- include('partials/header') -%>
+
+    <div class="container">
+        <div class="card border-0" style="background-color: #D3D3D3">
+            <div class="card-body">
+                <h2 class="card-title text-center">Your Bookmarks</h2>
+
+                <% currentUser.questionbookmarkedbyme.forEach(function(question){%>
+                    <div class="card my-4 shadow questionCard">
+                        <div class="card-header" style="background-color: #b0e0e6">
+                            <div class="d-flex align-items-center row justify-content-between">
+                                <div class="col-md-6 col-sm-12">
+                                    <p class="card-text mr-auto mb-0" style="text-transform: uppercase;">
+                                        <strong>
+                                            <%=question.course%>-<%=question.topic%>
+                                            <%if(question.comments.length==1){%> 
+                                                <span class="text-success">(<%=question.comments.length%> Answer)</span>
+
+                                                <%} else if(question.comments.length>1){%>
+                                                <span class="text-success">(<%=question.comments.length%> Answers)</span>
+
+                                                <%} else {%>
+                                                <span class="text-danger">(!Unanswered)</span>
+                                                    <%}%>
+                                        </strong>
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-sm-12 text-md-right text-sm-left">
+                                    <p class="card-text ml-auto ">
+                                        <small class="text-muted">
+                                            <%if(question.anonymouslyAsked){%>
+                                                Anonymously asked on <%=question.time1%>
+                                                    <%} else{%>
+                                                        Posted by <%=question.author.username%> on <%=question.time1%>
+                                                        <%}%>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body myCardBody" style="background-color: white;">
+                            <h4 class="card-text">
+                                <%=question.question%>
+                            </h4>
+                        </div>
+                        <div class="card-footer d-flex" style="background-color: #B0E0E6">
+                            <a href="/discussions/<%=question.id%>" class="btn btn-success mr-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
+                                </svg>
+                                <span class="d-none d-md-inline">View Entire Discussion</span></a>
+
+                            <%if (question.author.id.equals(currentUser._id)){%>
+                                <div class="d-flex ml-auto">
+                                    <a href="/discussions/<%=question.id%>/edit" class="btn btn-primary"
+                                        style="margin-right: 10px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                                            <path
+                                                d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
+                                        </svg> <span class="d-none d-md-inline">Edit</span>
+                                    </a>
+                                    <form action="/discussions/<%=question.id%>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-danger">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                <path fill-rule="evenodd"
+                                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                            </svg> <span class="d-none d-md-inline">Delete</span>
+                                        </button>
+                                    </form>
+                                </div>
+                                <%}%>
+                        </div>
+                    </div>
+                    <%}); %>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('partials/footer') -%>

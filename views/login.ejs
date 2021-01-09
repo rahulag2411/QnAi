@@ -1,0 +1,46 @@
+<%- include('partials/header') -%>
+
+	<div class="container my-5" style="min-width: 310px; width:25%; height: 70vh;">
+		<div class="d-flex justify-content-center">
+			<h4>Sign In</h4>
+		</div>
+
+		<div>
+			<form action="/login" method="POST" align="center" class="needs-validation" novalidate>
+				<div class="form-group">
+					<label for="currUsername"><strong>Username</strong></label>
+					<input type="text" class="form-control" id="currUsername" placeholder="Username" name="username" required>
+				</div>
+				<div class="form-group">
+					<label for="currPassword"><strong>Password</strong></label>
+					<input type="password" class="form-control" id="currPassword" placeholder="Password" name="password" required>
+				</div>
+				<div class="form-group form-check text-bottom">
+					<input type="checkbox" class="form-check-input" onclick="showPassword()">
+					<label class="form-check-label" for="ifCurrentUserAnonymous">Show Password</label>
+				</div>
+
+				<div>
+					<button type="submit" class="btn btn-primary w-100">Sign In</button>
+					<p class="mt-2 text-center">New to QnA? <a href="/register" id="noaccount">Create an account</a></p>
+		
+				</div>
+			</form>
+		</div>
+		
+	</div>
+
+	<script>
+		function showPassword() {
+			var x = document.getElementById("currPassword");
+			if (x.type === "password") {
+				x.type = "text";
+			} else {
+				x.type = "password";
+			}
+		}
+	</script>
+
+
+
+	<%- include('partials/footer') -%>

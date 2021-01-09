@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Q nAi?</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheet/main.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+	</style>
+</head>
+
+<body style="padding-bottom: 0; background-color: #fff; font-family: 'Montserrat', sans-serif;">
+	<!--linear-gradient(to bottom, #88bdbc 16%, #254e58 100%)-->
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow myNav">
+		<div class="container">
+			<a class="navbar-brand mr-1" href="/" style="text-transform: none; font-weight: bold">Q nAi?</a>
+			<button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navid">
+				<span class="material-icons">
+					menu
+				</span>
+			</button>
+			<div class="collapse navbar-collapse ml-lg-5" id="navid">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link my-link" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link my-link" href="/courses">Course</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link my-link" href="/myquestion">My Questions</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link my-link" href="/bookmarks">Bookmarks</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<% if(!currentUser){ %>
+						<li class="nav-item">
+
+							<a class="nav-link my-link" href="/register"><strong>Sign Up</strong></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link my-link" href="/login"><strong>Sign In</strong></a>
+						</li>
+						<% }else{ %>
+							<li class="nav-item">
+								<a class="nav-link my-link disable" href="/register">
+									<%=currentUser.username%>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link my-link" href="/logout">Logout</a>
+							</li>
+							<% } %>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<%if(success && success.length){%>
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<strong>
+				<%=success%>
+			</strong>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<%}else if(error && error.length){%>
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<strong>NOOOO!</strong>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<%}%>
+
+
+				<section id="header" class="d-flex align-items-center">
+
+					<div class="container">
+
+						<div class="position-relative row">
+							<div class="mb-3 text-center order-lg-1 order-2 text-md-left px-4 px-md-1 col-md-7 col-12">
+								<div class="text-center d-block d-md-none">
+									<img src="/images/question.svg" class="img-fluid animate1" width="250"
+										style="width: 75%; height: auto;" alt="Commom img" />
+								</div>
+
+								<div class="mt-4">
+									<h1 class="main-text" style="font-size: 3rem;">Q nAi?</h1>
+									<h2 class="secondary-text" style="font-size: 1.4rem">A platform where you can ask
+										doubts, interact and solve questions related to the courses.
+									</h2>
+									<p class="text-info" style="font-size:1.2rem">Want to know how your friends are doing?</p>
+									<a href="/ranking" class="btn btn-outline-info" style="border-radius: 25px;">Leaderboard</a>
+								</div>
+
+							</div>
+							<div class="text-center mb-3 d-none order-lg-2 order-1 d-md-block col-md-5 col-12">
+								<img src="/images/question.svg" class="img-fluid animate1" width="400"
+									alt="Commom img" />
+							</div>
+						</div>
+
+					</div>
+
+				</section>
+
+				<style>
+					#header {
+						width: 100%;
+						height: 93.189vh;
+						background: url(/images/wave.svg);
+						background-position: bottom;
+						background-size: 100%;
+						background-repeat: no-repeat;
+					}
+					#header .animate1{
+						animation: up-down 2s ease-in-out infinite alternate-reverse both;
+					}
+
+					@-webkit-keyframes up-down{
+						0%{
+							transform: translateY(10px);
+						}
+						100%{
+							transform: translateY(-10px);
+						}
+					}
+
+					@keyframes up-down{
+						0%{
+							transform: translateY(10px);
+
+						}
+						100%{
+							transform: translateY(-10px);
+
+						}
+					}
+
+				</style>
+
+</body>
+
+</html>

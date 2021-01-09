@@ -1,0 +1,148 @@
+<%- include('partials/header') -%>
+
+	<div class="container my-5" style="min-width: 310px; width: 25%; height: 70vh;">
+		<div class="d-flex justify-content-center">
+			<h4>Create your account</h4>
+		</div>
+
+		<div>
+			<form action="/register" method="POST" align="center" class="needs-validation" id="form" novalidate>
+				<div class="form-group">
+					<label for="currUsername" class="form-label"><strong>Username</strong></label>
+					<input required type="text" class="form-control" id="currUsername" placeholder="Username"
+						name="username">
+					<div class="valid-feedback">
+						Looks good!
+					</div>
+					<div class="invalid-feedback">
+						Please enter a valid username!
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="currPassword" class="form-label"><strong>Password</strong></label>
+					<input required type="password" class="form-control" id="currPassword" placeholder="Password"
+						name="password">
+					<div class="valid-feedback">
+						Looks good!
+					</div>
+					<div class="invalid-feedback">
+						Please enter a password!
+					</div>
+				</div>
+				<div class="form-group form-check text-bottom">
+					<input type="checkbox" class="form-check-input" onclick="showPassword()">
+					<label class="form-check-label" for="ifCurrentUserAnonymous">Show Password</label>
+				</div>
+
+				<div class="form-group">
+					<label for="currEnroll" class="form-label"><strong>Enrollment Number</strong></label>
+					<input required type="num" class="form-control" id="currEnroll" placeholder="Enrollment Number"
+						pattern="[2][0][0-9]{6}" name="enrollmentNo">
+					<div class="valid-feedback">
+						Looks good!
+					</div>
+					<div class="invalid-feedback">
+						Please enter a Valid Enrollment Number!
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="currBranch" class="form-label"><strong>Branch</strong></label>
+					<select id="currBranch" class="form-control form-select custom-select" name="branch" required>
+						<option selected disabled value="">Choose...</option>
+						<option value="cse">CSE</option>
+						<option value="ece">ECE</option>
+						<option value="ee">EE</option>
+						<option value="msm">MSM</option>
+						<!-- <option value="me">ME</option>
+						<option value="ce">CE</option>
+						<option value="ch">CH</option> -->
+					</select>
+					<div class="valid-feedback">
+						Looks good!
+					</div>
+					<div class="invalid-feedback">
+						Please select your branch!
+					</div>
+				</div>
+				<div>
+					<button type="submit" class="btn btn-primary w-100">Sign Up</button>
+
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+	<script>
+
+		function showPassword() {
+			var x = document.getElementById("currPassword");
+			if (x.type === "password") {
+				x.type = "text";
+			} else {
+				x.type = "password";
+			}
+		}
+
+
+		// const form = document.getElementById('form');
+		// const password = document.getElementById('currPassword');
+		// const password2 = document.getElementById('currPassword2');
+		// const currEnroll = document.getElementById('currEnroll');
+		// form.addEventListener('submit', e => {
+		// 	e.preventDefault();
+		// 	console.log("enter");
+		// 	checkInputs();
+		// });
+
+		// function checkInputs() {
+		// 	console.log("entercheck");
+		// 	// trim to remove the whitespaces
+		// 	const enrollmentNoString = currEnroll.value.trim();
+		// 	const enrollmentNoValue = parseInt(currEnroll.value.trim());
+		// 	const password2Value = password2.value.trim();
+		// 	const passwordValue = password.value.trim();
+
+		// 	if (!isNaN(enrollmentNoValue) && enrollmentNoString.length === 8) {
+		// 		if (enrollmentNoValue > 20000000 && enrollmentNoValue <= 20999999) {
+		// 			setSuccessFor(currEnroll);
+		// 		}
+		// 		else {
+		// 			setErrorFor(currEnroll, 'Enrollment Number out of Range');
+		// 		}
+		// 	}
+		// 	else {
+		// 		setErrorFor(currEnroll, 'Please enter Valid Enrollment Number')
+		// 	}
+
+		// 	if (password2Value === '') {
+		// 		setErrorFor(password2, 'Please confirm password');
+		// 	} else if (passwordValue !== password2Value) {
+		// 		setErrorFor(password2, 'Passwords does not match');
+		// 	} else {
+		// 		setSuccessFor(password2);
+		// 	}
+		// }
+
+		// function setErrorFor(input, message) {
+		// 	console.log("error");
+		// 	const formControl = input.parentElement;
+		// 	const div = formControl.querySelector('div');
+		// 	div.className = 'invalid-feedback';
+		// 	div.innerText = message;
+		// 	div.style.display = "block";
+		// 	div.style.visibility = "visible";
+		// }
+
+		// function setSuccessFor(input) {
+		// 	const formControl = input.parentElement;
+		// 	const div = formControl.querySelector('div');
+		// 	div.className = 'valid-feedback';
+		// 	div.innerText = 'Looks good!';
+		// }
+	</script>
+
+
+
+
+	<%- include('partials/footer') -%>
