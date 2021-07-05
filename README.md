@@ -1,4 +1,4 @@
-# QnAi-SyntaxError
+# QnAi
 This is a platform where students can ask doubts, interact, and solve questions related to the courses being taught to them that semester.
 
 ## Why QnAi?
