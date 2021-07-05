@@ -32,4 +32,4 @@ This is a platform where students can ask doubts, interact, and solve questions 
 5. Run "node index.js" in terminal.
 6. Go to your browser and open "localhost:3000".
 
-NOTE: In this version app is only implemented for freshies
+NOTE: In this version, app is only implemented for freshies
